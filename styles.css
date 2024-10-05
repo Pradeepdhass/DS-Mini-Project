@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lilita+One&display=swap'); 
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 90px; 
+  background-color: #f5f5f5; 
+}
+
+header {
+  background: linear-gradient(45deg, #f76c6c, #f7b76d); 
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 3px double #444444; 
+  position: fixed; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.logo img {
+  width: 100px; 
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ff9671; 
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li a {
+  color: #000000; 
+  display: inline-block;
+  padding: 6px 5px;
+  margin: 0 10px;
+  border: 4px solid transparent;
+  border-radius: 55px;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+header nav ul li a:hover {
+  background: linear-gradient(45deg, #f76c6c, #f7b76d); 
+  color: #9a9393;
+  border: 4px solid #ff9671; 
+  border-radius: 10px;
+}
+
+.toggle-btn{
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.toggle-btn:hover{
+  color: #e06c6c; 
+  border-color: #444444; 
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  background: #000000;
+}
+
+@media only screen and (max-width: 990px) {
+  header {
+      padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .hamburger {
+      display: block;
+  }
+  header nav {
+      position: absolute;
+      width: 100%;
+      left: -100%; 
+      width: 100%;
+      top: 90px;
+      background: linear-gradient(45deg, #f76c6c, #f7b76d);
+      padding: 30px;
+      transition: 0.3s;
+  }
+  header #nav_check:checked ~ nav {
+      left: 0;
+  }
+  header nav ul {
+      display: block;
+  }
+  header nav ul li a {
+      margin: 5px 0;
+  }
+}
+
+/* ------------ADD To Cart------------- */
+
+.sidebar {
+  background: linear-gradient(45deg, #f76c6c, #f7b76d); 
+  padding: 10px;
+  position: relative;
+  left: -100px; 
+  top: 0;
+  width: 300px; 
+  height: 110%;
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+  transition: 0.5s;
+  z-index: 1000;
+  border: 3px solid #444444;
+}
+
+/* ------- Hide scrollbar ------- */
+
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.sidebar hr {
+  border: none;
+  height: 2px;
+  background-color: #444444;
+  margin: 10px 0;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.crt-btn {
+  background-color: #ff9671; 
+  border: 1px solid #444444;
+  color: white; 
+  padding: 5px 10px; 
+  text-align: center;
+  display: inline;
+  font-size: 10px; 
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; 
+}
+
+.crt-btn:hover {
+  background-color: #ff6f61; 
+}
+
+li {
+  margin: 10px 0; 
+}
+
+/* ----- Styles for the search container -----*/
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  background-color: #e8e8e8; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin-right: 20px;
+  max-width: 500px;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ff9671;
+  border-radius: 5px 0 0 5px; 
+}
+
+.search-container button {
+  padding: 8px 10px;
+  font-size: 16px;
+  color: #ffffff; 
+  background-color: #ff9671; 
+  border: none;
+  border-radius: 0 5px 5px 0; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 2px;
+  border: 1px solid #e06c6c;
+}
+
+.search-container button:hover {
+  background-color: #ff6f61;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-container button:active {
+  background-color: #ff6f61; 
+  transform: translateY(1px); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/*--------------Popular-Recipies ---------------*/
+
+.popular-product {
+  color: #333333;
+  padding: 20px;
+  background-color:  #ffffff; 
+}
+
+.popular-product h2 {
+  color: #333333; 
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+}
+
+.product-card {
+  width: 250px; 
+  margin: 10px auto; 
+  border: 2px solid #444444;
+  text-align: center;
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.product-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-card img {
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover; 
+  border: 1px solid #444444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39); 
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+.product-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.product-card a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #ff9671; 
+  transition: background-color 0.3s ease;
+}
+
+.product-card a:hover {
+  background-color: #ff6f61;
+}
+
+.popular-thumb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn2 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff9671;
+  border: 2px solid #444444; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.btn2:hover {
+  background-color: #ff6f61;
+  transform: scale(1.05); 
+}
+
+.btn2:active{
+  background-color: #ffcdc7; 
+  transform: translateY(1px); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* ----- Scrollbar CSS ----- */
+
+.sidebar {
+  background-color: #f2f2f2;
+  padding: 10px;
+  position: fixed;
+  left: -350px; 
+  top: 0;
+  width: 300px;
+  height: 60%;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#goToTopBtn {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 90;
+  background-color: #ff9671;
+  color: #ffffff;
+  border-radius: 50% ;
+  border: 2px solid #000000;
+  width: 40px; 
+  height: 40px; 
+  padding: 0; 
+  cursor: pointer;
+  border: none;
+}
+
+.highlight {
+  background-color: #c3e6cb; 
+  border: 6px solid #005f16; 
+  box-shadow: 0 0 15px rgb(0, 248, 58); 
+}
+
+.traverse-highlight {
+  background-color: #ffbe69; 
+  border: 1px solid #000000; 
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="img/logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SMART SHOPPER </title>
+    
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+            <img src="img/logo.png" alt="HRP Ecommerce">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <h1>SMART SHOPPER</h1>
+        <nav>
+            <ul>
+                <div class="sidebar" id="sidebar">
+                    <h2>My Cart</h2><hr><br>
+                    <p>Total No of Ordered: <span id="clickCount">0</span></p>
+                    <p id="grandTotal">Grand Total: ₹0.00</p><br>
+                    <button  class="crt-btn" onclick="placeOrder()">Place Order</button>
+                    <button class="crt-btn" onclick="clearCart()">Clear Cart</button>  
+               </div>
+            
+               <div class="toggle-btn" onclick="toggleSidebar()">
+                  <i class="fas fa-shopping-cart"></i>
+               </div>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    <section class="popular-product">
+        <h2>Popular Product</h2>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for Product...">
+            <button onclick="searchProduct()">Search</button>
+        </div>
+
+        <div class="popular-thumb">
+
+            <div class="product-card">
+                <img src="img/jacket-1.jpg" alt="jacket-1" class="popular-product-image">
+                <h3>Jacket-1</h3>
+                <br><p class="price">RS: ₹100</p>
+                <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+                <button class="btn2" onclick="addToCart('Jacket-1', 10)">Add to Cart</button>
+                
+            </div>
+            
+
+        <div class="product-card">
+            <img src="img/n5.jpg" alt="dark blue Shirt" class="popular-product-image">
+            <h3>Blue Shirt (Full hand)</h3>
+            <br><p class="price">RS : ₹ 40(1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 2',40)">Add to Cart </button>
+            
+        </div>
+
+        <div class="product-card">
+            <img src="img/jacket-2.jpg" alt="jacket-2" class="popular-product-image">
+            <h3>jacket-2</h3>
+            <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 3',35)" id="item3">Add to Cart </button>
+           
+        </div>
+
+        <div class="product-card">
+            <img src="img/watch-1.jpg" alt="watch-1" class="ppopular-product-image">
+            <h3>Watch-1</h3>
+            <br><p class="price">RS : ₹ 30 (2 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 4',35)">Add to Cart </button>
+            
+        </div>
+
+        <div class="product-card">
+            <img src="img/jacket-3.jpg" alt="jacket-3" class="popular-product-image">
+            <h3>Jacket-3</h3>
+            <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 5',35)">Add to Cart </button>
+
+        </div>
+
+        <div class="product-card">
+            <img src="img/sports-1.jpg" alt="Sports shoe" class="popular-product-image">
+            <h3>Sports Shoe</h3>
+            <br><p class="price">RS : ₹ 40 (1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 6',40)">Add to Cart </button>
+          
+        </div>
+
+        <div class="product-card">
+            <img src="img/n2.jpg" alt="Gray Shirt" class="popular-product-image">
+            <h3>Gray Shirt</h3>
+            <br><p class="price">RS : ₹ 40 (1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 7',40)">Add to Cart </button>
+        
+        </div>
+       
+        <div class="product-card">
+            <img src="img/jacket-5.jpg" alt="jacket-5" class="popular-product-image">
+            <h3>Jacket-5</h3>
+            <br><p class="price">RS : ₹ 30 (1 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 8',30)">Add to Cart </button>
+           
+        </div>
+
+        <div class="product-card">
+            <img src="img/n4.jpg" alt="Shirt (Half hand)" class="popular-product-image">
+            <h3>Shirt (Half hand)</h3>
+            <br><p class="price">RS : ₹ 30 (2 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"  onclick="addToCart('product 9',30)">Add to Cart </button>
+         
+        </div>
+
+
+        <div class="product-card">
+            <img src="img/n3.jpg" alt="white Shirt" class="popular-product-image">
+            <br><h3>White Shirt</h3>
+            <br><p class="price">Rs : ₹ 80 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+           <button class="btn2"   onclick="addToCart('product 10',80)">Add to Cart </button>
+       
+        </div>
+        <div class="product-card">
+            <img src="img/n6.jpg" alt="Half Pant" class="popular-product-image">
+            <h3>Half Pant</h3>
+            <br><p class="price">Rs : ₹ 35  </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 11',35)">Add to Cart </button>
+            
+        </div>
+        <div class="product-card">
+            <img src="img/n8.jpg" alt="Black Shirt (Half Hand)" class="popular-product-image">
+            <h3>Black Shirt (Half Hand)</h3>
+            <br><p class="price">Rs : ₹ 60</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+           <button class="btn2"   onclick="addToCart('product 12',60)">Add to Cart </button>
+            
+        </div>
+
+        <div class="product-card">
+            <img src="img/watch-2.jpg" alt="watch-2" class="popular-product-image">
+            <h3>Watch-2</h3>
+            <br><p class="price">RS : ₹ 65 (2 NOS )</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 14',65)">Add to Cart </button>
+            
+        </div>
+
+        <div class="product-card">
+            <img src="img/jacket-4.jpg" alt="jacket-4" class="popular-product-image">
+            <h3>Jacket-4</h3>
+            <br><p class="price"> RS : 30 (2 NOS)</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 13',30)">Add to Cart </button>
+        
+        </div>
+     
+        <div class="product-card">
+            <img src="img/jacket-6.jpg" alt="jacket-5" class="popular-product-image">
+            <h3>Jacket-6</h3>
+            <br><p class="price">RS : ₹ 75 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 15',75)">Add to Cart </button>
+     
+        </div>
+
+        <div class="product-card">
+            <img src="img/shoe-3.jpg" alt="shoe-3" class="popular-product-image">
+            <h3>Shoe-3</h3>
+            <br><p class="price">RS : ₹ 85 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 16',85)">Add to Cart </button>
+           
+        </div>
+
+        <div class="product-card">
+            <img src="img/shoe-5.jpg " alt="product 17" class="popular-product-image">
+            <h3>Shoe-5</h3>
+            <br><p class="price">RS : ₹ 30 (2 NOS )</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 17',30)">Add to Cart </button>
+           
+        </div>
+
+        <div class="product-card">
+            <img src="img/sports-2.jpg" alt="Sports-2" class="popular-product-image">
+            <h3>Sports-2</h3>
+            <br><p class="price">RS : ₹ 100 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 18',100)">Add to Cart </button>
+            
+        </div>
+        
+        <div class="product-card">
+            <img src="img/watch-1.jpg" alt="Watch-1" class="popular-product-image">
+            <h3>Watch-6</h3>
+            <br><p class="price">RS : ₹ 100 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 19',100)">Add to Cart </button>
+        </div>
+
+
+        <div class="product-card">
+            <img src="img/watch-8.jpg" alt="watch-8" class="popular-product-image">
+            <h3>Watch-8</h3>
+            <br><p class="price">RS : ₹ 100 </p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i><br><br>
+            <button class="btn2"   onclick="addToCart('product 20',100)">Add to Cart </button>
+        </div>
+       
+       
+       
+</div>
+<center><button class="btn2" onclick="window.location.href='index.html'">Return to home</button></center>
+    </section>
+ 
+    <button onclick="goToTop()" id="goToTopBtn" title="Go to top">Top</button>
+</body>
